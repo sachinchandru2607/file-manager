@@ -1,0 +1,93 @@
+@import './style-constant';
+
+html body {
+    color: #333;
+    line-height: 1.6;
+    height: 100%;
+    background : url(#{$imagePath}/grey-background.jpg) no-repeat center center fixed;
+}
+
+@mixin displayFlex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin flexCenter {
+    justify-content: center;
+    align-items: center;
+}
+
+.app{
+    @include displayFlex(row);
+    @include flexCenter;
+    height: 100%;
+}
+
+.file-manager {
+    @include displayFlex(column);
+    margin: 5% 5%;
+    height: 600px;
+    width: 60%;
+    max-width: 1366px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.151);
+}
+
+.centre-align {
+    text-align: center;
+}
+
+.search-files {
+    @include displayFlex(row);
+    @include flexCenter;
+    width: 100%;
+    height: 6%;
+}
+
+input {
+    width: 80%;
+    height: 100%;
+    border : 1px solid grey;
+    outline: none;
+    padding: 0px 10px;
+}
+
+
+.directory {
+    margin: 3% 1%;
+    border : 1px solid grey;
+    height: 70%;
+}
+
+.director-actions i{
+    margin-top: 15px;
+    padding-right: 20px;
+    right : 0;
+    float:right;
+
+}
+
+
+.directory-record {
+    background-color: #9c9b9b1f;
+    padding: 10px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.directory {
+    padding: 1px 10px;
+    margin: 1px 5px;
+    height: 100%;
+}
+
+.separator {
+    display: flex;
+    border-bottom: 1px solid #e3e3e3;
+    padding: 5px;
+    height: 1px;
+    margin: 5px;
+}
