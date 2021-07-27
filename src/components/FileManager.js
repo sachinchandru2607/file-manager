@@ -1,20 +1,23 @@
 import SearchFiles from "./SearchFiles";
 import Directory  from "./Directory";
+import { useState } from "react";
 
 const FileManager = () => {
+
+    const [searchTerm, setSearchTerm] = useState("");
+/*
+searchFiles - update the searchterm state to re-render directory list 
+*/
+
+    const searchFiles = (text) => {
+        setSearchTerm(text);
+    };
+
     return (
         <div className = "file-manager card">
             <h1 className = "centre-align">File Manager</h1>
-            <SearchFiles />
-            <div className = "director-actions">
-            <div>
-            <i className ="fa fa-file-o">Add File</i>
-            </div>
-            <div>
-            <i className ="fa fa-folder-open" fill= "none">Add Folder</i>
-            </div>
-            </div>
-            <Directory />
+            <SearchFiles searchFiles = {searchFiles} />
+            <Directory searchTerm = {searchTerm} />
         </div>
     );
 };
